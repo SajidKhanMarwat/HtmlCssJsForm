@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEC Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <p style="background-color: rgb(118, 197, 250); padding: 5px;">My Profile</p>
+    </div>
+    <div >
+        <a href="index.html"><input type="button" value="Personel Details" class="buttons_1"></a>
+        <a href="contact.html"><input type="button" value="Contact" class="buttons_1"></a>
+        
+        
+        
+    </div>
+    <br>
+    
+    <div id = "1st" style="display: flex; flex-direction: column;">
+        <div>
+            <div class="para"><p class = "para_1">Contact Information</p></div><hr>
+
+            <div class = "left" style="float: left; width : 50%; height: 200px">
+                <label for="title">Mobile Number<span style="color: red;">*</span></label>
+                &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; 
+                <input type="number" id = "mobile" name="mobile"style="width: 360px;"><br><br>
+                <label for="mail">Email<span style="color: red;">*</label>
+                &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;
+                <input type="email" id = "mail" size="50" name="mail"><br><br>
+                <label for="skype">Skype Id</label>
+                &nbsp; &nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;
+                <input type="text" id = "skype"size="50" name="skype"><br><br>
+                <label for="linkedin">LinkedIn Id</label>
+                &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;
+                <input type="text" id = "linkedin" size="50" name="linkedin"><br><br>
+                <br><br><br>
+            </div>        
+        </div>   
+        <div>
+            <div class="para"><p class = "para_1">Mailing Address</p></div><hr>
+            
+            <div class = "left" style="float: left;  height: 140px;">
+
+                <label for="full address">Full Address<span style="color: red;">*</label>
+                &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" id="fadd" name = '' style="width: 350px;">
+                <br><br>
+
+                <label for="city">City<span style="color: red;">*</label>
+                &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                <select name="city" id="city" style="width: 350px;">
+                    <option value="lahore">Lahore</option>
+                    <option value="karachi">Karachi</option>
+                    <option value="islamabad">Islamabad</option>
+                    <option value="multan">Multan</option>
+                 </select>
+             </div>        
+        </div>
+            
+
+        <div>
+            <hr>        
+            <div class = "right" style="float: right;  height: 50px; width: 10%; margin-bottom: 100px; margin-top: 25px;">
+                
+                <input type="button" name="button" id="btn" class="button_2" value="Save" >
+                
+            </div>        
+        </div>
+    </div>        
+
+    <div id = "2nd" style="display: none;">
+        <center>
+        <table id = "tbl" style="width:50%; margin-top: 50px;">
+            <caption style="font-size: 30px;">Contact Information</caption>
+            <tr>
+                <th>Mobile Number</th>
+                <td id="md"></td>              
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td id="ed"></td>            
+            </tr>          
+            <tr>
+                <th>Skype ID</th>  
+                <td id="sd"></td>             
+            
+            </tr>
+            <tr>
+                <th>LinkedIN</th>
+                <td id="ld"></td>  
+                
+                
+            </tr>
+            <tr>
+                <th>Full Address</th> 
+                <td id="fd"></td> 
+                
+                
+            </tr>
+            <tr>
+                <th>City</th>  
+                <td id="cd"></td>
+                
+                
+            </tr>
+                    
+            </table>
+        </center>
+    </div>        
+
+
+   <script>
+         var out1 = document.getElementById("mobile")
+        var out2 = document.getElementById("mail")
+        var out3 = document.getElementById("skype")
+        var out4 = document.getElementById("linkedin")
+        var out5 = document.getElementById("fadd")
+        var out6 = document.getElementById("city")
+        
+
+        const btn3 = document.getElementById('btn');
+        let hide1 = document.getElementById('1st');
+        let show1 = document.getElementById('2nd');
+
+
+        function AddRow()
+        {
+            if(out1.value=="")
+            {
+                alert("Fill all reqiured fields!")
+            }
+            else if(out2.value=="")
+            {
+                alert("Fill all reqiured fields!")
+            }
+            
+            else if(out5.value=="")
+            {
+                alert("Fill all reqiured fields!")
+            }
+            else if(out6.value=="")
+            {
+                alert("Fill all reqiured fields!")
+            }
+            
+            else
+            {
+                hide1.style.display = 'none';
+                show1.style.display = 'block';
+            
+                document.getElementById("md").innerHTML = out1.value;
+                document.getElementById("ed").innerHTML = out2.value;
+                document.getElementById("sd").innerHTML = out3.value;
+                document.getElementById("ld").innerHTML = out4.value;
+                document.getElementById("fd").innerHTML = out5.value;
+                document.getElementById("cd").innerHTML = out6.value;
+                
+            }
+        
+        
+        }
+
+        btn3.addEventListener("click", AddRow);
+   </script>         
+    
+</body>
+</html>
